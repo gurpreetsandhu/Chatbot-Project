@@ -1,0 +1,62 @@
+<section class="background">
+
+<div class="container">
+    <section class="account-summary-container">
+    <div class="entry">
+        <p class="key">Account Holder</p>
+        <p class="value">{{account.account_holder}}</p>
+    </div>
+    <div class="entry">
+        <p class="key">Account Number</p>
+        <p class="value">{{account.account_number}}</p>
+    </div>
+    <div class="entry">
+        <p class="key">Account Balance</p>
+        <p class="value">{{account.balance}}</p>
+    </div>
+    <div class="entry">
+        <p class="key">IFSC Code</p>
+        <p class="value">{{account.ifsc_code}}</p>
+    </div>
+    <div class="entry">
+        <p class="key">Branch</p>
+        <p class="value">{{account.branch}}</p>
+    </div>
+    <div class="entry">
+        <p class="key">Account Type</p>
+        <p class="value">{{account.account_type}}</p>
+    </div>
+    <div class="entry">
+        <p class="key">Loan Taken</p>
+        <p class="value">{{account.loan_status}}</p>
+    </div>
+
+    <mat-expansion-panel class="mat-expansion-panel">
+        <mat-expansion-panel-header class="expansion-panel">
+            <mat-panel-title class="panelTitle">
+                Recent Transactions
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="header">
+            <p class="date">Date</p>
+            <p class="time">Time</p>
+            <p class="amount">Amount</p>
+            <p class="type">Type</p>
+            <p class="tofrom">To/From</p>
+        </div>
+        <section *ngIf = 'account.transacation_summary'>
+            <div *ngFor = 'let transaction of account.transacation_summary' class="contents">
+                <div class="transaction">
+                    <p class="date_value">{{transaction.date}}</p>
+                    <p class="time_value">{{transaction.time}}</p>
+                    <p class="amount_value">{{transaction.amount}}</p>
+                    <p class="type_value">{{transaction.type}}</p>
+                    <p class="tofrom_value">{{transaction.to_from}}</p>
+                </div>
+            </div>
+        </section>
+    </mat-expansion-panel>
+</section>
+</div>
+</section>  
+  
